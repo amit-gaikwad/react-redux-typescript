@@ -5,7 +5,8 @@ import { connect } from "react-redux";
 
 type EmployeePropTypes ={
     getEmployees? : any,
-    employees : IEmployee[] 
+    employees : IEmployee[],
+    history : any
 }
 class EmployeesComponent extends Component<EmployeePropTypes,{}>{
     
@@ -13,16 +14,37 @@ class EmployeesComponent extends Component<EmployeePropTypes,{}>{
         this.props.getEmployees();
     }
 
+    viewEmployeeDetails(email: string){
+        this.props.history.push("/employee/"+email)
+    }
+
     render(){
         const { employees } = this.props;
         return(
             <div>Employees List
                 <div>
+                    <table className="employeeTbl">
+                        <tbody>
+                        <tr>
+                            <td>Name</td>
+                            <td>Company</td>
+                            <td>Email</td>
+                            <td>View</td>
+                            <td>Edit</td>
+                            <td>Delete</td>
+                        </tr>
                     {employees &&  employees.map &&  employees.map((employee:IEmployee)=>(
-                    <div key={employee.email}>
-                        {employee.name}
-                    </div>
+                    <tr  key={employee.email}>
+                    <td>{employee.name}</td>
+                    <td>{employee.company}</td>
+                    <td>{employee.email}</td>
+                    <td onClick={()=>{this.viewEmployeeDetails(employee.email)}}>View</td>
+                    <td>Edit</td>
+                    <td>Delete</td>
+                </tr>
                     ))}
+                    </tbody>
+                    </table>
                 </div>
             </div>
         )

@@ -10,6 +10,15 @@ export function setEmployees(employees : IEmployee[]) {
     }
 }
 
+export function setEmployee(employee : IEmployee) {
+    return {
+        type: ActionsConstants.SET_EMPLOYEE,
+        payload: employee,
+    }
+}
+
+
+
 export function getEmployees(){
     return (dispatch: any)=>{
         axios.get('http://demo0116564.mockable.io/employees').then((response : any)=>{
@@ -17,3 +26,12 @@ export function getEmployees(){
         })
     }
 }
+
+export function getEmployee(id: string){
+    return (dispatch: any)=>{
+        axios.get('http://demo0116564.mockable.io/employee/1').then((response : any)=>{
+             dispatch(setEmployee(response as IEmployee));
+        })
+    }
+}
+

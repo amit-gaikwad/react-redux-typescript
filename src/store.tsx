@@ -2,7 +2,7 @@ import thunk from 'redux-thunk';
 import { applyMiddleware, createStore } from 'redux';
 import { rootReducers } from './reducers';
 
-function configureStore(state = { employeeReducer: {}, rotating: true }) {
+function configureStore(state = {}) {
   return createStore(rootReducers, state, applyMiddleware(thunk));
 } 
 
