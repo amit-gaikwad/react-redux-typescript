@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import React,{ Component } from "react";
-import { EmployeesComponent } from "./employee/employees.component";
+import EmployeesComponent  from "./employee/employees.component";
 import { AddEmployeesComponent } from "./employee/add-employee.component";
 
 export class AppRoutes extends Component<{},{}>{

@@ -1,10 +1,8 @@
 import React,{Component} from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { connect } from "react-redux";
 import axios from 'axios';
 import { startAction } from "./actions/startAction";
 import { stopAction } from "./actions/stopAction";
-import logo from './logo.svg';
 import './App.css';
 import { AppRoutes } from './app-routes';
 
