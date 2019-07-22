@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 type EmployeePropTypes ={
     getEmployees? : any,
     employees : IEmployee[],
-    history : any
+    history? : any
 }
 class EmployeesComponent extends Component<EmployeePropTypes,{}>{
     
