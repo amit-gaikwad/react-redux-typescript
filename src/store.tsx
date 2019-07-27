@@ -1,9 +1,9 @@
 import thunk from 'redux-thunk';
-import { applyMiddleware, combineReducers, createStore, Store } from 'redux';
-import rotateReducer from "./reducers/rotateReducer";
+import { applyMiddleware, createStore } from 'redux';
+import { rootReducers } from './reducers';
 
-function configureStore(state = { rotating: true }) {
-  return createStore(rotateReducer,state, applyMiddleware(thunk));
-}
+function configureStore(state = {}) {
+  return createStore(rootReducers, state, applyMiddleware(thunk));
+} 
 
-export default configureStore;
+export default configureStore;  
